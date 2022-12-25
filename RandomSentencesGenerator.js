@@ -1,4 +1,4 @@
-let readLine=require('readline').createInterface({
+let readline=require('readline').createInterface({
     input: process.stdin,
     output: process.stdout 
 });
@@ -31,11 +31,11 @@ let who=`${randomName} from ${randomPlace}`;
 let action=`${randomAdverb} ${randomVerb} ${randomNouns}`;
 let sentence=`${who} ${action} ${randomDetails}`;
 
-console.log("This is your first random generated sentence: ");
+console.log("This is your first random generated sentence: "); 
 console.log(sentence);
 
 let recursiveAsyncReadLine=function(){  
-    readLine.question("Click [Enter] to generate a new one. ", string =>{
-        console.log(sentence);
-    })
+    readline.question("Click [Enter] to generate a new one: ", string =>{ 
+            console.log(sentence);  
+    });
 }
