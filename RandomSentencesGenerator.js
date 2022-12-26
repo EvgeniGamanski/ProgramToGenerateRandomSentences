@@ -1,43 +1,46 @@
-const readline=require('readline').createInterface({ 
+const readline = require('readline').createInterface({
     input: process.stdin,
-    output: process.stdout 
+    output: process.stdout
 });
 
-let names=["Michael","John","Robert","James"];
+let names = ["Michael", "John", "Robert", "James"];
 
-let places=["London","Chicago","New York","Rome"];
+let places = ["London", "Chicago", "New York", "Rome"];
 
-let verbs=["reads","sees","hears","drinks"];
+let verbs = ["reads", "sees", "hears", "drinks"];
 
-let nouns=["a magazine","a plane","a motorcycle","orange juice"];
+let nouns = ["a magazine", "a plane", "a motorcycle", "orange juice"];
 
-let adverbs=["carefully","patiently","slowly","thoughtfully"];
+let adverbs = ["carefully", "patiently", "slowly", "thoughtfully"];
 
-let details=["in the office","in school","near the city centre"];
+let details = ["in the office", "in school", "near the city centre"];
 
-function getRandom(array){
-    let word=array[Math.floor(Math.random()*array.length)];
+function getRandom(array) {
+    let word = array[Math.floor(Math.random() * array.length)];
     return word;
 }
 
-let randomName=getRandom(names);
-let randomPlace=getRandom(places);
-let randomVerb=getRandom(verbs);
-let randomNouns=getRandom(nouns);
-let randomAdverb=getRandom(adverbs);
-let randomDetails=getRandom(details);
+let randomName = getRandom(names);
+let randomPlace = getRandom(places);
+let randomVerb = getRandom(verbs);
+let randomNouns = getRandom(nouns);
+let randomAdverb = getRandom(adverbs);
+let randomDetails = getRandom(details);
 
-let who=`${randomName} from ${randomPlace}`;
-let action=`${randomAdverb} ${randomVerb} ${randomNouns}`;
-let sentence=`${who} ${action} ${randomDetails}`;
+let who = `${randomName} from ${randomPlace}`;
+let action = `${randomAdverb} ${randomVerb} ${randomNouns}`;
+let sentence = `${who} ${action} ${randomDetails}`;
 
-console.log("This is your first random generated sentence: "); 
+console.log("This is your first random generated sentence: ");
 console.log(sentence);
 
-let recursiveAsyncReadLine=function(){  
-    readline.question("Click [Enter] to generate a new one: ", string =>{ 
-            console.log(sentence);  
-            recursiveAsyncReadLine();
+let recursiveAsyncReadLine = function () {
+    readline.question("Click [Enter] to generate a new one: ", string => {
+        who = `${randomName} from ${randomPlace}`;
+        action = `${randomAdverb} ${randomVerb} ${randomNouns}`;
+        sentence = `${who} ${action} ${randomDetails}`; 
+        console.log(sentence);
+        recursiveAsyncReadLine();
     });
 }
 
