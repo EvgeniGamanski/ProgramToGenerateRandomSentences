@@ -34,7 +34,7 @@ let sentence = `${who} ${action} ${randomDetails}`;
 console.log("This is your first random generated sentence: ");
 console.log(sentence);
 
-let recursiveAsyncReadLine = function () {
+let recursiveAsyncReadLine = function () { 
     readline.question("Click [Enter] to generate a new one: ", string => {
         randomName = getRandom(names);
         randomPlace = getRandom(places);
