@@ -36,10 +36,16 @@ console.log(sentence);
 
 let recursiveAsyncReadLine = function () {
     readline.question("Click [Enter] to generate a new one: ", string => {
+        randomName = getRandom(names);
+        randomPlace = getRandom(places);
+        randomVerb = getRandom(verbs);
+        randomNouns = getRandom(nouns);
+        randomAdverb = getRandom(adverbs);
+        randomDetails = getRandom(details);
         who = `${randomName} from ${randomPlace}`;
         action = `${randomAdverb} ${randomVerb} ${randomNouns}`;
-        sentence = `${who} ${action} ${randomDetails}`; 
-        console.log(sentence);
+        sentence = `${who} ${action} ${randomDetails}`;
+        console.log(sentence); 
         recursiveAsyncReadLine();
     });
 }
