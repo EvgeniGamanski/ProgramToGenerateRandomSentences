@@ -1,4 +1,4 @@
-let readline=require('readline').createInterface({
+const readline=require('readline').createInterface({ 
     input: process.stdin,
     output: process.stdout 
 });
@@ -37,5 +37,8 @@ console.log(sentence);
 let recursiveAsyncReadLine=function(){  
     readline.question("Click [Enter] to generate a new one: ", string =>{ 
             console.log(sentence);  
+            recursiveAsyncReadLine();
     });
 }
+
+recursiveAsyncReadLine();
